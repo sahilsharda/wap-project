@@ -1,5 +1,11 @@
 {
   "pages": {
+    "/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/css/app/page.css",
+      "static/chunks/app/page.js"
+    ],
     "/layout": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
@@ -12,23 +18,17 @@
       "static/css/app/not-found.css",
       "static/chunks/app/not-found.js"
     ],
-    "/page": [
+    "/dev-tools/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/css/app/page.css",
-      "static/chunks/app/page.js"
+      "static/css/app/dev-tools/page.css",
+      "static/chunks/app/dev-tools/page.js"
     ],
     "/aura/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
       "static/css/app/aura/page.css",
       "static/chunks/app/aura/page.js"
-    ],
-    "/dev-tools/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/css/app/dev-tools/page.css",
-      "static/chunks/app/dev-tools/page.js"
     ],
     "/projects/page": [
       "static/chunks/webpack.js",

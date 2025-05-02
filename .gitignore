@@ -18,6 +18,8 @@ out/
 # MacOS specific files
 .DS_Store
 
+.npm-debug.Log
+
 # Windows specific files
 Thumbs.db
 

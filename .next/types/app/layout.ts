@@ -1,4 +1,4 @@
-// File: /Users/montage/newtonnator/newtonnator/app/layout.tsx
+// File: /Users/montage/Downloads/newtonnator/app/layout.tsx
 import * as entry from '../../../app/layout.js'
 import type { ResolvingMetadata, ResolvingViewport } from 'next/dist/lib/metadata/types/metadata-interface.js'
 
