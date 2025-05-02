@@ -1,27 +1,33 @@
-# Dependencies
+# Node.js
 node_modules/
-.pnpm/
-.yarn/
-.bun/
+npm-debug.log
+yarn-debug.log
+yarn-error.log
 
-# Production
+# Build directories
 .next/
 out/
 
-# Logs
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
+# Log files
+*.log
 
-# System
-.DS_Store
-.env.local
-.env.*.local
-.env
-
-# IDEs
+# IDE files
 .vscode/
 .idea/
 
-# OS
+# MacOS specific files
+.DS_Store
+
+# Windows specific files
 Thumbs.db
+
+# Environment files
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Vercel/Netlify deployment
+.vercel/
+.netlify/

@@ -1,108 +1,50 @@
-.container {
-    padding: 2rem;
-    max-width: 1200px;
-    margin: 0 auto;
-    min-height: 100vh;
-    background: linear-gradient(135deg, #000000 0%, #1a1a1a 100%);
-    color: white;
+.page_404 {
+  padding: 40px 0;
+  background: #fff;
+  font-family: 'Arvo', serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  color: black;
 }
 
-.title {
-    font-size: 3rem;
-    text-align: center;
-    margin-bottom: 1rem;
-    background: linear-gradient(45deg, #00ff87, #60efff);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+.page_404 img {
+  width: 100%;
 }
 
-.subtitle {
-    text-align: center;
-    font-size: 1.2rem;
-    color: #a0a0a0;
-    margin-bottom: 3rem;
+.four_zero_four_bg {
+  background-image: url('https://cdn.dribbble.com/users/285475/screenshots/2083086/dribbble_1.gif');
+  height: 400px;
+  background-position: center;
+  background-repeat: no-repeat;
+  
 }
 
-.featuresGrid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 2rem;
-    padding: 1rem;
+.four_zero_four_bg h1 {
+  font-size: 80px;
+  margin: 0;
 }
 
-.featureCard {
-    background: rgba(255, 255, 255, 0.1);
-    padding: 2rem;
-    border-radius: 15px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    border: 1px solid rgba(255, 255, 255, 0.1);
+.four_zero_four_bg h3 {
+  font-size: 80px;
 }
 
-.featureCard:hover {
-    transform: translateY(-5px);
-    background: rgba(255, 255, 255, 0.15);
-    border-color: rgba(255, 255, 255, 0.2);
+.link_404 {
+  color: #ffffff !important;
+  padding: 10px 20px;
+  background: #39ac31;
+  margin: 20px 0;
+  display: inline-block;
+  text-decoration: none;
+  border-radius: 8px;
+  transition: transform 0.2s;
+}
+.link_404:hover {
+  transform: scale(1.05);
 }
 
-.featureCard.selected {
-    background: rgba(255, 255, 255, 0.2);
-    border-color: #00ff87;
+.contant_box_404 {
+  margin-top: -50px;
 }
 
-.icon {
-    font-size: 2.5rem;
-    margin-bottom: 1rem;
-}
-
-.featureCard h2 {
-    font-size: 1.5rem;
-    margin-bottom: 1rem;
-    color: white;
-}
-
-.featureCard p {
-    color: #a0a0a0;
-    line-height: 1.6;
-}
-
-.detailPanel {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background: rgba(0, 0, 0, 0.9);
-    padding: 2rem;
-    border-radius: 15px;
-    border: 1px solid #00ff87;
-    max-width: 600px;
-    width: 90%;
-    z-index: 1000;
-}
-
-.detailPanel h2 {
-    font-size: 2rem;
-    margin-bottom: 1rem;
-    color: #00ff87;
-}
-
-.detailPanel p {
-    color: #a0a0a0;
-    line-height: 1.6;
-    margin-bottom: 2rem;
-}
-
-.exploreButton {
-    background: linear-gradient(45deg, #00ff87, #60efff);
-    color: black;
-    border: none;
-    padding: 0.8rem 2rem;
-    border-radius: 25px;
-    font-weight: bold;
-    cursor: pointer;
-    transition: transform 0.3s ease;
-}
-
-.exploreButton:hover {
-    transform: scale(1.05);
-}
