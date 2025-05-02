@@ -1,7 +1,8 @@
 {
   "/page": "app/page.js",
-  "/not-found": "app/not-found.js",
-  "/dev-tools/page": "app/dev-tools/page.js",
   "/aura/page": "app/aura/page.js",
-  "/projects/page": "app/projects/page.js"
+  "/aura/quiz/page": "app/aura/quiz/page.js",
+  "/projects/page": "app/projects/page.js",
+  "/_not-found": "app/_not-found.js",
+  "/dev-tools/page": "app/dev-tools/page.js"
 }
