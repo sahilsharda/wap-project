@@ -1,0 +1,45 @@
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background: linear-gradient(90deg, #4b006e, #8a2be2);
+  color: white;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.navLinks {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+  margin: 0;
+  padding: 0;
+}
+
+.navLinks li a {
+  text-decoration: none;
+  color: white;
+  font-weight: 500;
+  transition: color 0.3s, text-decoration 0.3s;
+  /* Added text-decoration to transition */
+  border-bottom: 2px solid transparent;
+  /* Add a transparent bottom border */
+  padding-bottom: 2px;
+  /* Add some padding so text doesn't touch the underline */
+}
+
+.navLinks li a:hover {
+  color: #ffd700;
+  border-bottom-color: #ffd700;
+  /* Change border color on hover */
+}

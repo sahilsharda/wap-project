@@ -1,0 +1,102 @@
+.hero {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #4b006e, #8a2be2);
+    color: white;
+    padding: 2rem;
+    text-align: center;
+}
+
+.slideshow {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+}
+
+.slide {
+    width: 100%;
+    padding: 4rem 2rem;
+    text-align: center;
+    animation: fadeIn 1s ease-in;
+}
+
+.slide h1 {
+    font-size: 3.5rem;
+    margin-bottom: 1.5rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.slide p {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.toolsSection {
+    padding: 4rem 2rem;
+    background: white;
+    color: #333;
+}
+
+.toolsGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.toolCard {
+    background: #f8f9fa;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.toolCard:hover {
+    transform: translateY(-5px);
+}
+
+.toolCard h3 {
+    color: #4b006e;
+    margin-bottom: 1rem;
+}
+
+.toolCard p {
+    color: #666;
+    margin-bottom: 1.5rem;
+}
+
+.ctaButton {
+    display: inline-block;
+    padding: 1rem 2rem;
+    background: #4b006e;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background 0.3s ease;
+}
+
+.ctaButton:hover {
+    background: #8a2be2;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
