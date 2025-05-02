@@ -153,7 +153,7 @@
     border: 1px solid rgba(255, 255, 255, 0.1);
     transition: all 0.3s ease;
     overflow: hidden;
-    cursor: not-allowed;
+    cursor: pointer;
     text-decoration: none;
     color: inherit;
     min-height: 400px;

@@ -81,10 +81,10 @@ export default function Home() {
         </div>
 
         <div className={styles.modesGrid}>
-          <div className={styles.modeCard}>
+          <div className={styles.modeCard} onClick={() => window.location.href = 'https://aki-delta.vercel.app/'}>
             <div className={styles.cardImage}>
               <Image
-                src="/images/akinator-mode.png"
+                src="/images/akinator-logo.png"
                 alt="Akinator Mode"
                 width={200}
                 height={150}
