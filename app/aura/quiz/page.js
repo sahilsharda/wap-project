@@ -1,8 +1,11 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, Suspense } from 'react';
 import { useRouter, useSearchParams } from 'next/navigation';
 import styles from '../../../styles/Aura.module.css';
+
+// Add dynamic export configuration
+export const dynamic = 'force-dynamic';
 
 const questionBank = {
     easy: [
@@ -125,32 +128,16 @@ const questionBank = {
     ]
 };
 
+// Temporarily disable localStorage functions
 const getStoredLeaderboard = (mode) => {
-    const stored = localStorage.getItem(`${mode}Leaderboard`);
-    return stored ? JSON.parse(stored) : null;
+    return []; // Return empty array instead of using localStorage
 };
 
 const updateLeaderboard = (mode, newEntry) => {
-    const storedLeaderboard = getStoredLeaderboard(mode) || [];
-
-    // Add the new entry
-    storedLeaderboard.push(newEntry);
-
-    // Sort by score (descending) and time (ascending)
-    storedLeaderboard.sort((a, b) => {
-        if (b.score !== a.score) return b.score - a.score;
-        return a.time - b.time;
-    });
-
-    // Keep only top 5 entries
-    const updatedLeaderboard = storedLeaderboard.slice(0, 5);
-
-    // Save to localStorage
-    localStorage.setItem(`${mode}Leaderboard`, JSON.stringify(updatedLeaderboard));
-    return updatedLeaderboard;
+    return []; // Return empty array instead of using localStorage
 };
 
-export default function Quiz() {
+function QuizContent() {
     const router = useRouter();
     const searchParams = useSearchParams();
     const mode = searchParams.get('mode');
@@ -164,17 +151,7 @@ export default function Quiz() {
     const [selectedAnswer, setSelectedAnswer] = useState(null);
     const [showResult, setShowResult] = useState(false);
     const [quizCompleted, setQuizCompleted] = useState(false);
-    const [playerName, setPlayerName] = useState('');
-
-    useEffect(() => {
-        // Check for player name on mount
-        const name = localStorage.getItem('playerName');
-        if (!name) {
-            router.push('/aura');
-            return;
-        }
-        setPlayerName(name);
-    }, [router]);
+    const [playerName, setPlayerName] = useState('Player'); // Default name
 
     useEffect(() => {
         if (timeLeft > 0 && !quizCompleted) {
@@ -206,9 +183,6 @@ export default function Quiz() {
     };
 
     const handleQuizComplete = () => {
-        const playerName = localStorage.getItem('playerName');
-        const mode = searchParams.get('mode');
-        const difficulty = searchParams.get('difficulty');
         const timeTaken = timeLimit - timeLeft;
         const accuracy = Math.round((score / questions.length) * 100);
         const streak = Math.max(...questions.map((_, i) => {
@@ -222,29 +196,6 @@ export default function Quiz() {
             }
             return currentStreak;
         }));
-
-        const newEntry = {
-            rank: 0,
-            name: playerName,
-            score: score,
-            time: timeTaken,
-            level: difficulty ? difficulty.charAt(0).toUpperCase() + difficulty.slice(1) : 'Normal',
-            streak: streak,
-            accuracy: accuracy
-        };
-
-        // Update leaderboard
-        const updatedLeaderboard = updateLeaderboard(mode, newEntry);
-
-        // Update the entry's rank
-        const entryIndex = updatedLeaderboard.findIndex(entry =>
-            entry.name === playerName &&
-            entry.score === score &&
-            entry.time === timeTaken
-        );
-        if (entryIndex !== -1) {
-            newEntry.rank = entryIndex + 1;
-        }
 
         setQuizCompleted(true);
         setShowResult(true);
@@ -352,5 +303,13 @@ export default function Quiz() {
                 )}
             </div>
         </div>
+    );
+}
+
+export default function Quiz() {
+    return (
+        <Suspense fallback={<div className={styles.container}>Loading...</div>}>
+            <QuizContent />
+        </Suspense>
     );
 } 

@@ -1,10 +1,13 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, Suspense } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import styles from '../../styles/Aura.module.css';
 import { useRouter } from 'next/navigation';
+
+// Add dynamic export configuration
+export const dynamic = 'force-dynamic';
 
 const features = [
     {
@@ -279,32 +282,16 @@ const formatTime = (seconds) => {
     return `${minutes}:${remainingSeconds.toString().padStart(2, '0')}`;
 };
 
+// Temporarily disable localStorage functions
 const getStoredLeaderboard = (mode) => {
-    const stored = localStorage.getItem(`${mode}Leaderboard`);
-    return stored ? JSON.parse(stored) : [];
+    return []; // Return empty array instead of using localStorage
 };
 
 const updateLeaderboard = (mode, newEntry) => {
-    const storedLeaderboard = getStoredLeaderboard(mode);
-
-    // Add the new entry
-    storedLeaderboard.push(newEntry);
-
-    // Sort by score (descending) and time (ascending)
-    storedLeaderboard.sort((a, b) => {
-        if (b.score !== a.score) return b.score - a.score;
-        return a.time - b.time;
-    });
-
-    // Keep only top 5 entries
-    const updatedLeaderboard = storedLeaderboard.slice(0, 5);
-
-    // Save to localStorage
-    localStorage.setItem(`${mode}Leaderboard`, JSON.stringify(updatedLeaderboard));
-    return updatedLeaderboard;
+    return []; // Return empty array instead of using localStorage
 };
 
-export default function Aura() {
+function AuraContent() {
     const [selectedMode, setSelectedMode] = useState(null);
     const [selectedDifficulty, setSelectedDifficulty] = useState(null);
     const [showLeaderboard, setShowLeaderboard] = useState(false);
@@ -314,25 +301,22 @@ export default function Aura() {
     const [showPrizeInfo, setShowPrizeInfo] = useState(false);
     const [nameChangeCount, setNameChangeCount] = useState(0);
     const [currentLeaderboard, setCurrentLeaderboard] = useState({
-        normal: getStoredLeaderboard('normal') || normalLeaderboard,
-        challenge: getStoredLeaderboard('challenge') || challengeLeaderboard
+        normal: [],
+        challenge: []
     });
     const router = useRouter();
 
     useEffect(() => {
-        const name = localStorage.getItem('playerName');
-        const changeCount = localStorage.getItem('nameChangeCount');
-        if (name) {
-            setPlayerName(name);
-            setNameChangeCount(changeCount ? parseInt(changeCount) : 0);
-            setShowNameInput(false);
-        }
+        // Initialize with empty data
+        setCurrentLeaderboard({
+            normal: [],
+            challenge: []
+        });
     }, []);
 
     const handleNameSubmit = (e) => {
         e.preventDefault();
         if (playerName.trim()) {
-            localStorage.setItem('playerName', playerName);
             setShowNameInput(false);
         }
     };
@@ -342,19 +326,13 @@ export default function Aura() {
             alert('You have reached the maximum number of name changes (3).');
             return;
         }
-        setNameChangeCount(prev => {
-            const newCount = prev + 1;
-            localStorage.setItem('nameChangeCount', newCount.toString());
-            return newCount;
-        });
+        setNameChangeCount(prev => prev + 1);
         setShowNameInput(true);
         setPlayerName('');
     };
 
     const handleResetName = () => {
         if (window.confirm('Are you sure you want to reset your name? This will clear your current name and reset your name change count.')) {
-            localStorage.removeItem('playerName');
-            localStorage.removeItem('nameChangeCount');
             setPlayerName('');
             setNameChangeCount(0);
             setShowNameInput(true);
@@ -371,10 +349,6 @@ export default function Aura() {
     };
 
     const handleModeSelect = (mode) => {
-        if (!localStorage.getItem('playerName')) {
-            setShowNameInput(true);
-            return;
-        }
         setSelectedMode(mode);
         if (mode.id === 1) {
             const questions = JSON.stringify(questionBank.easy);
@@ -383,10 +357,6 @@ export default function Aura() {
     };
 
     const handleDifficultySelect = (difficulty) => {
-        if (!localStorage.getItem('playerName')) {
-            setShowNameInput(true);
-            return;
-        }
         setSelectedDifficulty(difficulty);
         const difficultyLevel = difficulty.title.toLowerCase().split(' ')[0];
         const questions = JSON.stringify(questionBank[difficultyLevel]);
@@ -395,9 +365,10 @@ export default function Aura() {
 
     const handleResetLeaderboard = () => {
         if (window.confirm('Are you sure you want to reset the leaderboard? This action cannot be undone.')) {
-            localStorage.removeItem('normalLeaderboard');
-            localStorage.removeItem('challengeLeaderboard');
-            window.location.reload();
+            setCurrentLeaderboard({
+                normal: [],
+                challenge: []
+            });
         }
     };
 
@@ -631,5 +602,13 @@ export default function Aura() {
                 </>
             )}
         </div>
+    );
+}
+
+export default function Aura() {
+    return (
+        <Suspense fallback={<div className={styles.container}>Loading...</div>}>
+            <AuraContent />
+        </Suspense>
     );
 }
