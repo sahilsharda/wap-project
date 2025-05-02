@@ -18,8 +18,6 @@ out/
 # MacOS specific files
 .DS_Store
 
-.npm-debug.Log
-
 # Windows specific files
 Thumbs.db
 
@@ -33,4 +31,11 @@ Thumbs.db
 # Vercel/Netlify deployment
 .vercel/
 .netlify/
-node_modules/
+
+# Next.js build files
+.next/
+.next/cache/
+.next/types/
+.next/server/
+.next/static/
+.next/trace
