@@ -1,388 +1,697 @@
-/*!*************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[11].oneOf[7].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[11].oneOf[7].use[3]!./styles/QuestionBox.module.css ***!
-  \*************************************************************************************************************************************************************************************************************************************************************************/
-.QuestionBox_container__t32GD {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 1.5rem;
-}
-
-.QuestionBox_question__9h3Io {
-  font-size: 1.5rem;
-  font-weight: 600;
-  color: #2d3748;
-}
-
-.QuestionBox_buttonGroup__2sThf {
-  display: flex;
-  gap: 1rem;
-  flex-wrap: wrap;
-}
-
-.QuestionBox_button__KI7l0 {
-  padding: 0.5rem 1rem;
-  background-color: #4f46e5;
-  color: white;
-  border: none;
-  border-radius: 0.5rem;
-  cursor: pointer;
-  transition: background-color 0.2s ease;
-}
-
-.QuestionBox_button__KI7l0:hover {
-  background-color: #4338ca;
-}
-
-/*!*************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[11].oneOf[7].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[11].oneOf[7].use[3]!./styles/GuessResult.module.css ***!
-  \*************************************************************************************************************************************************************************************************************************************************************************/
-.GuessResult_wrapper__4wFk7 {
-  text-align: center;
-}
-
-.GuessResult_image__FePUB {
-  width: 120px;
-  height: 120px;
-  border-radius: 9999px;
-  object-fit: cover;
-  margin: 1rem auto;
-}
-
-.GuessResult_name__umMCk {
-  font-size: 1.5rem;
-  font-weight: 600;
-  margin-bottom: 0.5rem;
-  color: #1a202c;
-}
-
-.GuessResult_description___40pF {
-  font-style: italic;
-  color: #4a5568;
-  margin-bottom: 1rem;
-}
-
-.GuessResult_restartButton___SLrK {
-  padding: 0.5rem 1.2rem;
-  background-color: #e53e3e;
-  color: white;
-  border: none;
-  border-radius: 0.5rem;
-  cursor: pointer;
-}
-
-.GuessResult_restartButton___SLrK:hover {
-  background-color: #c53030;
-}
-
-/*!***********************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[11].oneOf[7].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[11].oneOf[7].use[3]!./styles/BasicGame.module.css ***!
-  \***********************************************************************************************************************************************************************************************************************************************************************/
-.BasicGame_wrapper__wHs_n {
-  text-align: center;
-  padding: 2rem;
-}
-
-.BasicGame_heading__bkerM {
-  font-size: 2rem;
-  font-weight: bold;
-  margin-bottom: 1.5rem;
-  color: #2d3748;
-}
-
-.BasicGame_question__ak8Y2 {
-  font-size: 1.25rem;
-  margin-bottom: 1rem;
-}
-
-.BasicGame_buttonGroup__acKFr {
-  display: flex;
-  gap: 1rem;
-  justify-content: center;
-  margin-top: 1rem;
-}
-
-.BasicGame_button__Ol3Ru {
-  padding: 0.75rem 1.5rem;
-  background-color: #4c51bf;
-  color: white;
-  border: none;
-  border-radius: 8px;
-  font-size: 1rem;
-  cursor: pointer;
-  transition: background-color 0.3s;
-}
-
-.BasicGame_button__Ol3Ru:hover {
-  background-color: #434190;
-}
-
-.BasicGame_guess__nmAos {
-  font-size: 1.5rem;
-  margin-bottom: 1.5rem;
-  color: #1a202c;
-}
-
-.BasicGame_restart__p94wo {
-  padding: 0.6rem 1.2rem;
-  background-color: #e53e3e;
-  color: white;
-  border: none;
-  border-radius: 6px;
-  cursor: pointer;
-  font-size: 1rem;
-}
-
-.BasicGame_restart__p94wo:hover {
-  background-color: #c53030;
-}
-
-/*!********************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[11].oneOf[7].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[11].oneOf[7].use[3]!./styles/Navbar.module.css ***!
-  \********************************************************************************************************************************************************************************************************************************************************************/
-.Navbar_navbar__zhZYq {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  z-index: 1000;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1rem 2rem;
-  background: linear-gradient(90deg, #4b006e, #8a2be2);
-  color: white;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-}
-
-.Navbar_logo__YNqJh {
-  font-size: 1.5rem;
-  font-weight: bold;
-}
-
-.Navbar_navLinks__fa9HS {
-  list-style: none;
-  display: flex;
-  gap: 1.5rem;
-  margin: 0;
-  padding: 0;
-}
-
-.Navbar_navLinks__fa9HS li a {
-  text-decoration: none;
-  color: white;
-  font-weight: 500;
-  transition: color 0.3s, -webkit-text-decoration 0.3s;
-  transition: color 0.3s, text-decoration 0.3s;
-  transition: color 0.3s, text-decoration 0.3s, -webkit-text-decoration 0.3s;
-  /* Added text-decoration to transition */
-  border-bottom: 2px solid transparent;
-  /* Add a transparent bottom border */
-  padding-bottom: 2px;
-  /* Add some padding so text doesn't touch the underline */
-}
-
-.Navbar_navLinks__fa9HS li a:hover {
-  color: #ffd700;
-  border-bottom-color: #ffd700;
-  /* Change border color on hover */
-}
-/*!********************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[11].oneOf[7].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[11].oneOf[7].use[3]!./styles/Slides.module.css ***!
-  \********************************************************************************************************************************************************************************************************************************************************************/
-.Slides_slideshow__ocfJd {
+/*!**********************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[11].oneOf[7].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[11].oneOf[7].use[3]!./app/styles/Home.module.css ***!
+  \**********************************************************************************************************************************************************************************************************************************************************************/
+.Home_container__UZ9hw {
+    min-height: 100vh;
     width: 100%;
-    height: 100vh;
     position: relative;
     overflow: hidden;
-    background: linear-gradient(135deg, #4b006e, #8a2be2);
+    background: #000;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-.Slides_slide__7UNnm {
+.Home_gradientBackground__ssFyz {
     position: absolute;
-    width: 100%;
-    height: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background:
+        radial-gradient(circle at var(--mouse-x) var(--mouse-y),
+            rgba(255, 0, 128, 0.15) 0%,
+            transparent 20%),
+        radial-gradient(circle at calc(100% - var(--mouse-x)) calc(100% - var(--mouse-y)),
+            rgba(0, 255, 135, 0.15) 0%,
+            transparent 20%),
+        radial-gradient(circle at calc(var(--mouse-x) * 0.5) calc(var(--mouse-y) * 0.5),
+            rgba(96, 239, 255, 0.15) 0%,
+            transparent 20%);
+    animation: Home_gradientMove__4UXdW 15s ease infinite;
+    transform: translateY(calc(var(--scroll-position) * 0.1px));
+    z-index: 0;
+}
+
+@keyframes Home_gradientMove__4UXdW {
+    0% {
+        transform: scale(1) rotate(0deg) translateY(calc(var(--scroll-position) * 0.1px));
+    }
+
+    50% {
+        transform: scale(1.2) rotate(180deg) translateY(calc(var(--scroll-position) * 0.1px));
+    }
+
+    100% {
+        transform: scale(1) rotate(360deg) translateY(calc(var(--scroll-position) * 0.1px));
+    }
+}
+
+.Home_content__A9lgg {
+    position: relative;
+    z-index: 1;
+    max-width: 1400px;
+    width: 90%;
+    margin: 0 auto;
+    padding: 6rem 2rem;
+    text-align: center;
+}
+
+.Home_heroSection__XQPNq {
+    margin-bottom: 8rem;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: Home_fadeInUp__5aD_u 1s ease forwards;
+}
+
+.Home_heroStats__To_IZ {
+    display: flex;
+    justify-content: center;
+    gap: 4rem;
+    margin-top: 4rem;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: Home_fadeInUp__5aD_u 1s ease forwards 0.6s;
+}
+
+.Home_statItem__KunYI {
+    text-align: center;
+}
+
+.Home_statNumber__AxFZb {
+    display: block;
+    font-size: 3rem;
+    font-weight: bold;
+    background: linear-gradient(45deg, #00ff87, #60efff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 0.5rem;
+}
+
+.Home_statLabel__7xJxO {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 1.1rem;
+}
+
+.Home_title__A_ZDL {
+    font-size: 5rem;
+    margin-bottom: 2rem;
+    position: relative;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: Home_fadeInUp__5aD_u 1s ease forwards 0.3s;
+}
+
+.Home_gradientText__w3FRI {
+    background: linear-gradient(45deg, #00ff87, #60efff, #ff0080);
+    background-size: 200% 200%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: Home_gradientText__w3FRI 5s ease infinite;
+    display: block;
+    margin-bottom: 1rem;
+}
+
+@keyframes Home_gradientText__w3FRI {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.Home_subtitle__dVuyg {
+    font-size: 1.8rem;
+    color: rgba(255, 255, 255, 0.7);
+    margin-top: 1rem;
+    display: block;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: Home_fadeInUp__5aD_u 1s ease forwards 0.6s;
+}
+
+.Home_modesGrid__1_l_i {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    grid-gap: 4rem;
+    gap: 4rem;
+    margin: 6rem 0;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: Home_fadeInUp__5aD_u 1s ease forwards 1.5s;
+}
+
+.Home_modeCard__WE_ff {
+    position: relative;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 30px;
+    padding: 3rem;
+    -webkit-backdrop-filter: blur(10px);
+            backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+    overflow: hidden;
+    cursor: not-allowed;
+    text-decoration: none;
+    color: inherit;
+    min-height: 400px;
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
-    text-align: center;
-    color: white;
-    padding: 2rem;
-    opacity: 0;
-    transition: opacity 1s ease-in-out;
+    justify-content: center;
+    opacity: 0.8;
 }
 
-.Slides_slide__7UNnm.Slides_active__2O4f1 {
+.Home_modeCard__WE_ff:hover {
+    transform: translateY(-10px) scale(1.02);
+    border-color: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
     opacity: 1;
 }
 
-.Slides_slide__7UNnm h1 {
-    font-size: 3.5rem;
-    margin-bottom: 1.5rem;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+.Home_cardImage__TEJyx {
+    margin-bottom: 2rem;
+    position: relative;
+    overflow: hidden;
+    border-radius: 20px;
+    width: 100%;
+    max-width: 300px;
 }
 
-.Slides_slide__7UNnm p {
-    font-size: 1.5rem;
+.Home_modeImg__Hvlce {
+    width: 100%;
+    height: auto;
+    border-radius: 20px;
+    transition: transform 0.3s ease;
+}
+
+.Home_modeCard__WE_ff:hover .Home_modeImg__Hvlce {
+    transform: scale(1.05);
+}
+
+.Home_cardContent__2Tdy6 {
+    text-align: center;
+    position: relative;
+    z-index: 2;
+}
+
+.Home_cardContent__2Tdy6 h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+    background: linear-gradient(45deg, #00ff87, #60efff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.Home_cardContent__2Tdy6 p {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    margin-bottom: 2rem;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.Home_tags__2ONlX {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.Home_tags__2ONlX span {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 0.8rem 1.5rem;
+    border-radius: 30px;
+    font-size: 1rem;
+    color: rgba(255, 255, 255, 0.8);
+    transition: all 0.3s ease;
+}
+
+.Home_modeCard__WE_ff:hover .Home_tags__2ONlX span {
+    background: rgba(255, 255, 255, 0.2);
+    transform: translateY(-5px);
+}
+
+.Home_comingSoonCard__p_HcP {
+    position: relative;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 30px;
+    padding: 2.5rem;
+    -webkit-backdrop-filter: blur(10px);
+            backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+    overflow: hidden;
+    cursor: pointer;
+    text-decoration: none;
+    color: inherit;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.Home_comingSoonCard__p_HcP:hover {
+    transform: translateY(-10px) scale(1.02);
+    border-color: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+.Home_comingSoonBadge__0uMZS {
+    position: absolute;
+    top: 1.5rem;
+    right: 1.5rem;
+    background: linear-gradient(45deg, #ff0080, #ff6b6b);
+    padding: 0.8rem 1.5rem;
+    border-radius: 30px;
+    font-size: 1rem;
+    font-weight: bold;
+    color: white;
+    animation: Home_pulse__5u1u7 2s infinite;
+    z-index: 3;
+    box-shadow: 0 4px 15px rgba(255, 0, 128, 0.3);
+}
+
+@keyframes Home_pulse__5u1u7 {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.05);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+.Home_comingSoonSection__NzLwx {
+    margin: 8rem 0;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: Home_fadeInUp__5aD_u 1s ease forwards 2.5s;
+}
+
+.Home_comingSoonTitle__BVUoy {
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+    background: linear-gradient(45deg, #00ff87, #60efff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-align: center;
+}
+
+.Home_comingSoonGrid__138zc {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-gap: 3rem;
+    gap: 3rem;
     max-width: 800px;
     margin: 0 auto;
 }
 
-@keyframes Slides_fadeIn__tru3G {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
+.Home_availableFeatures__eeMUp {
+    text-align: center;
+    margin: 8rem 0;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: Home_fadeInUp__5aD_u 1s ease forwards 1.8s;
+}
 
+.Home_availableTitle__unysl {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    background: linear-gradient(45deg, #00ff87, #60efff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.Home_availableText__IUlj0 {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 1.2rem;
+    max-width: 800px;
+    margin: 0 auto;
+    line-height: 1.8;
+}
+
+.Home_featuresGrid__Z20eD {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-gap: 3rem;
+    gap: 3rem;
+    margin: 6rem 0;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: Home_fadeInUp__5aD_u 1s ease forwards 2s;
+}
+
+.Home_featureCard__5qsX2 {
+    position: relative;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 30px;
+    padding: 2.5rem;
+    -webkit-backdrop-filter: blur(10px);
+            backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+    overflow: hidden;
+    cursor: pointer;
+    text-decoration: none;
+    color: inherit;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.Home_featureCard__5qsX2:hover {
+    transform: translateY(-10px) scale(1.02);
+    border-color: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+.Home_testimonials__UfmA0 {
+    margin: 8rem 0;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: Home_fadeInUp__5aD_u 1s ease forwards 2.2s;
+}
+
+.Home_testimonialsTitle__ZcCF5 {
+    font-size: 2.5rem;
+    margin-bottom: 4rem;
+    background: linear-gradient(45deg, #00ff87, #60efff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.Home_testimonialsGrid__MEook {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-gap: 3rem;
+    gap: 3rem;
+}
+
+.Home_testimonialCard__aMkvr {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 30px;
+    padding: 2.5rem;
+    -webkit-backdrop-filter: blur(10px);
+            backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+}
+
+.Home_testimonialCard__aMkvr:hover {
+    transform: translateY(-10px);
+    border-color: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+.Home_testimonialContent__Ibtzj {
+    text-align: left;
+}
+
+.Home_testimonialContent__Ibtzj p {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    margin-bottom: 2rem;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.Home_testimonialAuthor__O72eN {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.Home_testimonialImage__J2VkI {
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+}
+
+.Home_authorName__192o0 {
+    display: block;
+    font-weight: bold;
+    font-size: 1.1rem;
+    margin-bottom: 0.3rem;
+}
+
+.Home_authorRole__LqDk5 {
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 0.9rem;
+}
+
+.Home_newsletter__xSozv {
+    margin: 8rem 0;
+    padding: 4rem;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 30px;
+    -webkit-backdrop-filter: blur(10px);
+            backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    opacity: 0;
+    transform: translateY(20px);
+    animation: Home_fadeInUp__5aD_u 1s ease forwards 2.4s;
+}
+
+.Home_newsletterTitle__dFpvG {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    background: linear-gradient(45deg, #00ff87, #60efff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.Home_newsletterText__M4U8X {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    max-width: 600px;
+    margin: 0 auto 2rem;
+}
+
+.Home_newsletterForm__wW1zL {
+    display: flex;
+    gap: 1rem;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.Home_newsletterInput__giB0x {
+    flex: 1 1;
+    padding: 1rem 1.5rem;
+    border-radius: 30px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: rgba(255, 255, 255, 0.05);
+    color: white;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+.Home_newsletterInput__giB0x:focus {
+    outline: none;
+    border-color: rgba(255, 255, 255, 0.2);
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.Home_newsletterButton__VveJV {
+    padding: 1rem 2rem;
+    border-radius: 30px;
+    background: linear-gradient(45deg, #00ff87, #60efff);
+    color: black;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.Home_newsletterButton__VveJV:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 255, 135, 0.3);
+}
+
+.Home_footerSection__pnLQH {
+    margin-top: 8rem;
+    padding: 4rem 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    opacity: 0;
+    transform: translateY(20px);
+    animation: Home_fadeInUp__5aD_u 1s ease forwards 3s;
+}
+
+.Home_footerLinks__4lqgz {
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+    margin-bottom: 3rem;
+    flex-wrap: wrap;
+}
+
+.Home_footerLink__GG_5A {
+    color: rgba(255, 255, 255, 0.7);
+    text-decoration: none;
+    transition: color 0.3s ease;
+    font-size: 1.1rem;
+}
+
+.Home_footerLink__GG_5A:hover {
+    color: #00ff87;
+}
+
+.Home_socialLinks__9OE_g {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-bottom: 3rem;
+    flex-wrap: wrap;
+}
+
+.Home_socialLink__sRfK4 {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    padding: 1rem 1.5rem;
+    border-radius: 30px;
+    background: rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+    text-decoration: none;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.Home_socialLink__sRfK4:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: translateY(-5px);
+}
+
+.Home_socialText__X1y86 {
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+.Home_reviewSection__7sEmF {
+    margin: 4rem 0;
+    padding: 3rem;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 30px;
+    text-align: center;
+}
+
+.Home_reviewTitle__bFVak {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    background: linear-gradient(45deg, #00ff87, #60efff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.Home_reviewText__08glC {
+    color: rgba(255, 255, 255, 0.7);
+    margin-bottom: 2rem;
+    font-size: 1.2rem;
+    line-height: 1.8;
+    max-width: 800px;
+    margin: 0 auto 2rem;
+}
+
+.Home_reviewButtons__wHzoG {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+.Home_reviewButton__fvOjM {
+    padding: 1rem 2rem;
+    border-radius: 30px;
+    background: linear-gradient(45deg, #00ff87, #60efff);
+    color: black;
+    text-decoration: none;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    border: none;
+    cursor: pointer;
+}
+
+.Home_reviewButton__fvOjM:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 255, 135, 0.3);
+}
+
+.Home_copyright__2WP4V {
+    text-align: center;
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 1rem;
+    margin-top: 3rem;
+}
+
+@keyframes Home_fadeInUp__5aD_u {
     to {
         opacity: 1;
         transform: translateY(0);
     }
 }
-/*!**********************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[11].oneOf[7].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[11].oneOf[7].use[3]!./styles/GamePage.module.css ***!
-  \**********************************************************************************************************************************************************************************************************************************************************************/
-.GamePage_mainContainer__Zj3AH {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  min-height: 100vh;
-  gap: 1.5rem;
-  padding: 1.5rem;
-  padding-top: 6rem;
-  /* space for fixed navbar */
-}
 
-.GamePage_container__IujHP {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  min-height: 100vh;
-  gap: 1.5rem;
-  padding: 1.5rem;
-  background: black;
-  color: white;
-  text-align: center;
-}
+@media (max-width: 768px) {
+    .Home_content__A9lgg {
+        padding: 4rem 1rem;
+    }
 
-.GamePage_heading__DRdOP {
-  font-size: 2rem;
-  font-weight: 700;
-}
+    .Home_title__A_ZDL {
+        font-size: 3.5rem;
+    }
 
-.GamePage_buttonGroup___fuym {
-  display: flex;
-  gap: 1rem;
-}
+    .Home_subtitle__dVuyg {
+        font-size: 1.4rem;
+    }
 
-.GamePage_akinatorBtn__xiTmQ {
-  background-color: #8b5cf6;
-  color: white;
-  padding: 0.75rem 1.5rem;
-  border-radius: 0.5rem;
-  font-weight: 500;
-}
+    .Home_heroStats__To_IZ {
+        flex-direction: column;
+        gap: 2rem;
+    }
 
-.GamePage_basicBtn__oFGQx {
-  background-color: #10b981;
-  color: white;
-  padding: 0.75rem 1.5rem;
-  border-radius: 0.5rem;
-  font-weight: 500;
-}
+    .Home_modesGrid__1_l_i {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
 
-.GamePage_akinatorBtn__xiTmQ:hover,
-.GamePage_basicBtn__oFGQx:hover {
-  opacity: 0.9;
-}
+    .Home_modeCard__WE_ff {
+        padding: 2rem;
+        min-height: auto;
+    }
 
-.GamePage_featuresSection__jaXxt {
-  width: 100%;
-  max-width: 1200px;
-  margin: 4rem auto;
-  padding: 2rem;
-}
+    .Home_featuresGrid__Z20eD {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
 
-.GamePage_featuresHeading__P0ZY6 {
-  font-size: 2.5rem;
-  margin-bottom: 2rem;
-  color: white;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-}
+    .Home_testimonialsGrid__MEook {
+        grid-template-columns: 1fr;
+    }
 
-.GamePage_featuresGrid__6079D {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  grid-gap: 2rem;
-  gap: 2rem;
-  padding: 1rem;
-}
+    .Home_newsletterForm__wW1zL {
+        flex-direction: column;
+    }
 
-.GamePage_featureCard__PIwdg {
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.05));
-  -webkit-backdrop-filter: blur(10px);
-          backdrop-filter: blur(10px);
-  border-radius: 1rem;
-  padding: 2rem;
-  transition: all 0.3s ease;
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  cursor: pointer;
-  position: relative;
-  overflow: hidden;
-}
+    .Home_newsletterInput__giB0x {
+        width: 100%;
+    }
 
-.GamePage_featureCard__PIwdg::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: linear-gradient(45deg,
-      rgba(139, 92, 246, 0.2) 0%,
-      rgba(16, 185, 129, 0.2) 50%,
-      rgba(0, 180, 216, 0.2) 100%);
-  opacity: 0;
-  transition: opacity 0.3s ease;
-  z-index: 0;
-}
+    .Home_footerLinks__4lqgz {
+        flex-direction: column;
+        align-items: center;
+        gap: 1.5rem;
+    }
 
-.GamePage_featureCard__PIwdg:hover::before {
-  opacity: 1;
-}
-
-.GamePage_featureCard__PIwdg:hover {
-  transform: translateY(-5px) scale(1.02);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
-}
-
-.GamePage_featureCard__PIwdg:active {
-  transform: scale(0.98);
-}
-
-.GamePage_featureIcon__GwdBY {
-  font-size: 3rem;
-  margin-bottom: 1rem;
-  position: relative;
-  z-index: 1;
-}
-
-.GamePage_featureTitle__zrtAx {
-  font-size: 1.5rem;
-  font-weight: 600;
-  margin-bottom: 1rem;
-  color: white;
-  position: relative;
-  z-index: 1;
-}
-
-.GamePage_featureDescription__BrVpH {
-  font-size: 1rem;
-  line-height: 1.5;
-  color: rgba(255, 255, 255, 0.9);
-  position: relative;
-  z-index: 1;
+    .Home_socialLinks__9OE_g {
+        flex-direction: column;
+        align-items: center;
+    }
 }

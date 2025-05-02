@@ -8,14 +8,16 @@
     display: flex;
     flex-direction: column;
     /* align-items: center; */
-   
+
     justify-content: center;
-     min-height: 100vh; 
+    min-height: 100vh;
     text-align: center;
 }
+
 .NotFound_four_zero_four_bg__4nSE7 {
-background-repeat: no-repeat;
+    background-repeat: no-repeat;
 }
+
 .NotFound_container___krbu {
     display: flex;
     flex-direction: column;

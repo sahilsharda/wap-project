@@ -1,52 +1,93 @@
 /*!********************************************************************************************************************************************************************************************************************************************************************!*\
   !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[11].oneOf[7].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[11].oneOf[7].use[3]!./styles/Navbar.module.css ***!
   \********************************************************************************************************************************************************************************************************************************************************************/
+/* Already existing */
 .Navbar_navbar__zhZYq {
   position: fixed;
   top: 0;
   left: 0;
-  width: 100%;
-  z-index: 1000;
+  right: 0;
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 1rem 2rem;
-  background: linear-gradient(90deg, #4b006e, #8a2be2);
-  color: white;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  transition: background 0.3s ease-in-out, transform 0.3s ease-in-out;
+  -webkit-backdrop-filter: blur(10px);
+          backdrop-filter: blur(10px);
 }
+
+/* Default fully visible navbar */
+.Navbar_visible__6oe7A {
+  background: rgba(0, 0, 0, 0.85);
+  transform: translateY(0);
+}
+
+/* Hidden navbar for scroll-up behavior */
+.Navbar_hidden__XgLqP {
+  transform: translateY(-100%);
+}
+
+/* Transparent style for /404 */
+.Navbar_transparent__c0djB {
+  background: transparent;
+}
+
+/* On hover, revert transparency */
+.Navbar_navbar__zhZYq:hover {
+  background: rgba(0, 0, 0, 0.85);
+}
+
 
 .Navbar_logo__YNqJh {
   font-size: 1.5rem;
   font-weight: bold;
+  color: white;
+  text-shadow: 0 0 10px rgba(255, 107, 107, 0.5);
+  transition: all 0.3s ease;
+}
+
+.Navbar_logo__YNqJh:hover {
+  text-shadow: 0 0 15px rgba(255, 107, 107, 0.8);
 }
 
 .Navbar_navLinks__fa9HS {
-  list-style: none;
   display: flex;
-  gap: 1.5rem;
+  gap: 2rem;
+  list-style: none;
   margin: 0;
   padding: 0;
 }
 
 .Navbar_navLinks__fa9HS li a {
-  text-decoration: none;
   color: white;
-  font-weight: 500;
-  transition: color 0.3s, -webkit-text-decoration 0.3s;
-  transition: color 0.3s, text-decoration 0.3s;
-  transition: color 0.3s, text-decoration 0.3s, -webkit-text-decoration 0.3s;
-  /* Added text-decoration to transition */
-  border-bottom: 2px solid transparent;
-  /* Add a transparent bottom border */
-  padding-bottom: 2px;
-  /* Add some padding so text doesn't touch the underline */
+  text-decoration: none;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  position: relative;
+  padding: 0.5rem 0;
 }
 
-.Navbar_navLinks__fa9HS li a:hover {
-  color: #ffd700;
-  border-bottom-color: #ffd700;
-  /* Change border color on hover */
+.Navbar_navLinks__fa9HS li a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(45deg, #ff6b6b, #00ffff);
+  transition: width 0.3s ease;
+}
+
+.Navbar_navLinks__fa9HS li a:hover::after,
+.Navbar_navLinks__fa9HS li a.Navbar_active__v_AMp::after {
+  width: 100%;
+}
+
+.Navbar_navLinks__fa9HS li a:hover,
+.Navbar_navLinks__fa9HS li a.Navbar_active__v_AMp {
+  color: #ff6b6b;
+  text-shadow: 0 0 10px rgba(255, 107, 107, 0.5);
 }
 /*!****************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
   !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[11].oneOf[2].use[1]!./node_modules/next/dist/build/webpack/loaders/next-font-loader/index.js??ruleSet[1].rules[11].oneOf[2].use[2]!./node_modules/next/font/google/target.css?{"path":"app/layout.tsx","import":"Inter","arguments":[{"subsets":["latin"]}],"variableName":"inter"} ***!

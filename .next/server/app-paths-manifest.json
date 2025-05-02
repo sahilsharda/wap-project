@@ -1,5 +1,7 @@
 {
-  "/page": "app/page.js",
+  "/dev-tools/page": "app/dev-tools/page.js",
+  "/aura/page": "app/aura/page.js",
   "/not-found": "app/not-found.js",
-  "/aura/page": "app/aura/page.js"
+  "/projects/page": "app/projects/page.js",
+  "/page": "app/page.js"
 }

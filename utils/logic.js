@@ -1,29 +1,35 @@
-// utils/logic.js
-
-const people = [
-  {
-    name: 'John',
-    image: '/images/people/john.jpg',
-    description: 'A tall man from Newton',
-    traits: [true, false, true], // e.g. [isMale, under30, fromNewton]
-  },
-  {
-    name: 'Alice',
-    image: '/images/people/alice.jpg',
-    description: 'A young woman living in Newton',
-    traits: [false, true, true],
-  },
-];
-
-export function guessPersonFromAnswers(answers) {
-  for (const person of people) {
-    const match = person.traits.every((val, idx) => val === answers[idx]);
-    if (match) return person;
-  }
-
-  return {
-    name: 'Unknown',
-    image: '/images/people/unknown.png',
-    description: 'We couldn’t figure it out!',
-  };
+export function calculateScore(correctAnswers, totalQuestions) {
+    return Math.round((correctAnswers / totalQuestions) * 100);
 }
+
+export function formatTime(seconds) {
+    const minutes = Math.floor(seconds / 60);
+    const remainingSeconds = seconds % 60;
+    return `${minutes}:${remainingSeconds.toString().padStart(2, '0')}`;
+}
+
+export function shuffleArray(array) {
+    const newArray = [...array];
+    for (let i = newArray.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [newArray[i], newArray[j]] = [newArray[j], newArray[i]];
+    }
+    return newArray;
+}
+
+export function validateEmail(email) {
+    const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return re.test(email);
+}
+
+export function debounce(func, wait) {
+    let timeout;
+    return function executedFunction(...args) {
+        const later = () => {
+            clearTimeout(timeout);
+            func(...args);
+        };
+        clearTimeout(timeout);
+        timeout = setTimeout(later, wait);
+    };
+} 

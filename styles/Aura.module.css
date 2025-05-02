@@ -1,50 +1,1244 @@
-.page_404 {
-  padding: 40px 0;
-  background: #fff;
-  font-family: 'Arvo', serif;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 100vh;
-  color: black;
+.container {
+    padding: 4rem 2rem;
+    width: 100%;
+    min-height: 100vh;
+    background: #000000;
+    color: white;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3rem;
 }
 
-.page_404 img {
-  width: 100%;
+.container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background:
+        radial-gradient(circle at 20% 20%, rgba(0, 255, 135, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 80% 80%, rgba(96, 239, 255, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 50% 50%, rgba(255, 0, 128, 0.1) 0%, transparent 50%);
+    animation: gradientMove 15s ease infinite;
+    z-index: 0;
 }
 
-.four_zero_four_bg {
-  background-image: url('https://cdn.dribbble.com/users/285475/screenshots/2083086/dribbble_1.gif');
-  height: 400px;
-  background-position: center;
-  background-repeat: no-repeat;
-  
+@keyframes gradientMove {
+    0% {
+        transform: scale(1) rotate(0deg);
+    }
+
+    50% {
+        transform: scale(1.2) rotate(180deg);
+    }
+
+    100% {
+        transform: scale(1) rotate(360deg);
+    }
 }
 
-.four_zero_four_bg h1 {
-  font-size: 80px;
-  margin: 0;
+.title {
+    font-size: 4.5rem;
+    text-align: center;
+    margin: 2rem 0;
+    background: linear-gradient(45deg, #00ff87, #60efff, #ff0080);
+    background-size: 200% 200%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: gradientText 5s ease infinite, fadeInDown 1s ease;
+    position: relative;
+    z-index: 1;
+    letter-spacing: 2px;
+    text-transform: uppercase;
 }
 
-.four_zero_four_bg h3 {
-  font-size: 80px;
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
-.link_404 {
-  color: #ffffff !important;
-  padding: 10px 20px;
-  background: #39ac31;
-  margin: 20px 0;
-  display: inline-block;
-  text-decoration: none;
-  border-radius: 8px;
-  transition: transform 0.2s;
-}
-.link_404:hover {
-  transform: scale(1.05);
+.subtitle {
+    text-align: center;
+    font-size: 1.4rem;
+    color: #a0a0a0;
+    margin: 2rem 0 4rem;
+    position: relative;
+    z-index: 1;
+    animation: fadeInUp 1s ease 0.3s both;
+    max-width: 800px;
+    line-height: 1.6;
 }
 
-.contant_box_404 {
-  margin-top: -50px;
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
+@keyframes gradientText {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.searchContainer {
+    width: 100%;
+    max-width: 600px;
+    position: relative;
+    z-index: 1;
+    margin: 2rem 0;
+}
+
+.searchInput {
+    width: 100%;
+    padding: 1rem 2rem;
+    border-radius: 25px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: rgba(255, 255, 255, 0.05);
+    color: white;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+}
+
+.searchInput:focus {
+    outline: none;
+    border-color: #ffc0cb;
+    box-shadow: 0 0 20px rgba(255, 192, 203, 0.2);
+}
+
+.searchInput::placeholder {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.featuresGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 3rem;
+    padding: 2rem;
+    position: relative;
+    z-index: 1;
+    max-width: 1400px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.featureCard {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 20px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    position: relative;
+    backdrop-filter: blur(10px);
+    animation: fadeIn 0.5s ease both;
+    opacity: 0;
+    transform: translateY(20px);
+    padding: 1.5rem;
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.featureCard:nth-child(1) {
+    animation-delay: 0.2s;
+}
+
+.featureCard:nth-child(2) {
+    animation-delay: 0.4s;
+}
+
+.featureCard:nth-child(3) {
+    animation-delay: 0.6s;
+}
+
+.featureCard:nth-child(4) {
+    animation-delay: 0.8s;
+}
+
+.featureCard::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, #ffc0cb, #9370db, #ffd700);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: -1;
+}
+
+.featureCard:hover {
+    transform: translateY(-5px) scale(1.02);
+    border-color: transparent;
+}
+
+.featureCard:hover::before {
+    opacity: 0.1;
+}
+
+.imageContainer {
+    position: relative;
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+    border-radius: 15px;
+    margin-bottom: 1.5rem;
+}
+
+.featureImage {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.featureCard:hover .featureImage {
+    transform: scale(1.1);
+}
+
+.featureCard h2 {
+    font-size: 1.8rem;
+    margin: 1.5rem 0;
+    color: white;
+    transition: color 0.3s ease;
+    text-align: center;
+    letter-spacing: 1px;
+}
+
+.featureCard:hover h2 {
+    color: #ffc0cb;
+}
+
+.featureCard p {
+    color: #a0a0a0;
+    margin: 1.5rem 0;
+    line-height: 1.8;
+    text-align: center;
+    font-size: 1.1rem;
+}
+
+.tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    justify-content: center;
+    margin: 1rem 0;
+}
+
+.tag {
+    background: rgba(255, 192, 203, 0.1);
+    color: #ffc0cb;
+    padding: 0.5rem 1rem;
+    border-radius: 15px;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+}
+
+.tag:hover {
+    background: rgba(255, 192, 203, 0.2);
+    transform: translateY(-2px);
+}
+
+.detailPanel {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(0, 0, 0, 0.95);
+    padding: 3rem;
+    border-radius: 20px;
+    border: 1px solid #ffc0cb;
+    max-width: 800px;
+    width: 90%;
+    z-index: 1000;
+    backdrop-filter: blur(10px);
+    animation: panelAppear 0.3s ease;
+}
+
+@keyframes panelAppear {
+    from {
+        opacity: 0;
+        transform: translate(-50%, -40%);
+    }
+
+    to {
+        opacity: 1;
+        transform: translate(-50%, -50%);
+    }
+}
+
+.detailPanel h2 {
+    font-size: 2.5rem;
+    margin: 2rem 0;
+    color: #ffc0cb;
+    background: linear-gradient(45deg, #ffc0cb, #9370db);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: gradientText 5s ease infinite;
+    text-align: center;
+    letter-spacing: 1px;
+}
+
+.detailPanel p {
+    color: #a0a0a0;
+    line-height: 1.8;
+    margin: 2rem 0;
+    text-align: center;
+    font-size: 1.2rem;
+}
+
+.panelLinks {
+    display: flex;
+    gap: 1.5rem;
+    margin: 3rem 0;
+    justify-content: center;
+}
+
+.featureLink {
+    background: linear-gradient(45deg, #ffc0cb, #9370db);
+    color: white;
+    padding: 0.8rem 1.5rem;
+    border-radius: 25px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    font-size: 1.1rem;
+}
+
+.featureLink::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.5s ease;
+}
+
+.featureLink:hover::before {
+    left: 100%;
+}
+
+.guideLink {
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+    padding: 0.8rem 1.5rem;
+    border-radius: 25px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.guideLink:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: scale(1.05);
+}
+
+.closeButton {
+    background: linear-gradient(45deg, #ffc0cb, #9370db);
+    color: white;
+    border: none;
+    padding: 1rem 2.5rem;
+    border-radius: 25px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    display: block;
+    margin: 2rem auto;
+    font-size: 1.1rem;
+}
+
+.closeButton::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.5s ease;
+}
+
+.closeButton:hover::before {
+    left: 100%;
+}
+
+.closeButton:hover {
+    transform: scale(1.05);
+}
+
+.leaderboardButton {
+    background: linear-gradient(45deg, #00ff87, #60efff);
+    color: black;
+    padding: 1.2rem 2.5rem;
+    border-radius: 30px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    margin-top: 3rem;
+    font-size: 1.2rem;
+    box-shadow: 0 4px 15px rgba(0, 255, 135, 0.2);
+}
+
+.leaderboardButton:hover {
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 6px 20px rgba(0, 255, 135, 0.3);
+}
+
+.leaderboardButton::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.5s ease;
+}
+
+.leaderboardButton:hover::before {
+    left: 100%;
+}
+
+.leaderboard {
+    background: rgba(0, 0, 0, 0.9);
+    border: 1px solid #00ff87;
+    border-radius: 20px;
+    padding: 2rem;
+    width: 100%;
+    max-width: 800px;
+    margin: 2rem 0;
+    animation: fadeIn 0.3s ease;
+}
+
+.leaderboard h2 {
+    color: #00ff87;
+    text-align: center;
+    margin-bottom: 1.5rem;
+    font-size: 2rem;
+}
+
+.leaderboardFilters {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+}
+
+.filterButton {
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 15px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.filterButton.active {
+    background: linear-gradient(45deg, #00ff87, #60efff);
+    color: black;
+}
+
+.filterButton:hover {
+    transform: scale(1.05);
+}
+
+.leaderboardList {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.leaderboardItem {
+    display: grid;
+    grid-template-columns: auto 1fr auto auto auto auto;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 15px;
+    transition: all 0.3s ease;
+}
+
+.leaderboardItem:hover {
+    background: rgba(255, 255, 255, 0.1);
+    transform: translateX(5px);
+}
+
+.rank {
+    color: #00ff87;
+    font-weight: bold;
+    min-width: 40px;
+}
+
+.name {
+    font-weight: bold;
+}
+
+.score {
+    color: #60efff;
+    font-weight: bold;
+    min-width: 80px;
+    text-align: right;
+}
+
+.streak {
+    color: #ff0080;
+    font-weight: bold;
+}
+
+.accuracy {
+    color: #00ff87;
+    font-weight: bold;
+}
+
+.level {
+    color: #60efff;
+    font-size: 0.9rem;
+    min-width: 80px;
+    text-align: right;
+}
+
+.modesGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 3rem;
+    padding: 2rem;
+    position: relative;
+    z-index: 1;
+    max-width: 1400px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.modeCard {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 20px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    position: relative;
+    backdrop-filter: blur(10px);
+    animation: fadeIn 0.5s ease both;
+    opacity: 0;
+    transform: translateY(20px);
+    padding: 1.5rem;
+}
+
+.modeCard:hover {
+    transform: translateY(-5px) scale(1.02);
+    border-color: #00ff87;
+}
+
+.modeImage {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.modeCard:hover .modeImage {
+    transform: scale(1.1);
+}
+
+.modeCard h2 {
+    font-size: 1.8rem;
+    margin: 1.5rem 0;
+    color: white;
+    transition: color 0.3s ease;
+    text-align: center;
+    letter-spacing: 1px;
+}
+
+.modeCard:hover h2 {
+    color: #00ff87;
+}
+
+.modeCard p {
+    color: #a0a0a0;
+    margin: 1.5rem 0;
+    line-height: 1.8;
+    text-align: center;
+    font-size: 1.1rem;
+}
+
+.difficultiesGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    padding: 2rem;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.difficultyCard {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 20px;
+    padding: 1.5rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.difficultyCard:hover {
+    transform: translateY(-5px);
+    border-color: #60efff;
+}
+
+.stats {
+    display: flex;
+    justify-content: space-around;
+    margin: 1.5rem 0;
+    padding: 1rem;
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 15px;
+}
+
+.statItem {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.statLabel {
+    color: #a0a0a0;
+    font-size: 0.9rem;
+}
+
+.statValue {
+    color: #60efff;
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+.startButton {
+    background: linear-gradient(45deg, #00ff87, #60efff);
+    color: black;
+    padding: 1rem 2rem;
+    border-radius: 25px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.startButton:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px rgba(0, 255, 135, 0.3);
+}
+
+.rulesLink {
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+    padding: 1rem 2rem;
+    border-radius: 25px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.rulesLink:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: scale(1.05);
+}
+
+.quizContainer {
+    padding: 2rem;
+    max-width: 800px;
+    margin: 0 auto;
+    background: rgba(0, 0, 0, 0.8);
+    border-radius: 20px;
+    border: 1px solid #00ff87;
+}
+
+.quizHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+    padding: 1rem;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 15px;
+    backdrop-filter: blur(10px);
+}
+
+.quizInfo {
+    display: flex;
+    gap: 2rem;
+}
+
+.difficulty {
+    color: #00ff87;
+    font-weight: bold;
+}
+
+.score {
+    color: #60efff;
+    font-weight: bold;
+}
+
+.timer {
+    color: #ff0080;
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+.questionContainer {
+    text-align: center;
+}
+
+.questionNumber {
+    color: #a0a0a0;
+    margin-bottom: 1rem;
+}
+
+.questionText {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+    color: white;
+    line-height: 1.4;
+}
+
+.optionsGrid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.optionButton {
+    padding: 1rem;
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.05);
+    color: white;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.optionButton:hover {
+    background: rgba(255, 255, 255, 0.1);
+    transform: translateY(-2px);
+}
+
+.optionButton.selected {
+    border-color: #00ff87;
+    background: rgba(0, 255, 135, 0.1);
+}
+
+.optionButton.correct {
+    border-color: #00ff87;
+    background: rgba(0, 255, 135, 0.2);
+}
+
+.optionButton.incorrect {
+    border-color: #ff0080;
+    background: rgba(255, 0, 128, 0.2);
+}
+
+.nextButton {
+    padding: 1rem 2rem;
+    background: linear-gradient(45deg, #00ff87, #60efff);
+    border: none;
+    border-radius: 10px;
+    color: black;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.nextButton:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 255, 135, 0.3);
+}
+
+.scoreCard {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 2rem;
+    border-radius: 20px;
+    backdrop-filter: blur(10px);
+    text-align: center;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.finalScore {
+    font-size: 3rem;
+    font-weight: bold;
+    background: linear-gradient(45deg, #00ff87, #60efff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin: 1rem 0;
+}
+
+.quizComplete {
+    text-align: center;
+    padding: 3rem;
+    max-width: 600px;
+    margin: 0 auto;
+    background: rgba(0, 0, 0, 0.8);
+    border-radius: 20px;
+    border: 1px solid #00ff87;
+}
+
+.quizComplete h2 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    background: linear-gradient(45deg, #00ff87, #60efff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.quizStats {
+    display: flex;
+    gap: 2rem;
+}
+
+.quizActions {
+    display: flex;
+    gap: 1.5rem;
+    justify-content: center;
+    margin-top: 2rem;
+}
+
+.questionCard {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 2rem;
+    border-radius: 20px;
+    backdrop-filter: blur(10px);
+    margin-bottom: 2rem;
+}
+
+.questionText {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+    line-height: 1.4;
+}
+
+.optionsGrid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.optionButton {
+    padding: 1rem;
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.05);
+    color: white;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.optionButton:hover {
+    background: rgba(255, 255, 255, 0.1);
+    transform: translateY(-2px);
+}
+
+.optionButton.selected {
+    border-color: #00ff87;
+    background: rgba(0, 255, 135, 0.1);
+}
+
+.optionButton.correct {
+    border-color: #00ff87;
+    background: rgba(0, 255, 135, 0.2);
+}
+
+.optionButton.incorrect {
+    border-color: #ff0080;
+    background: rgba(255, 0, 128, 0.2);
+}
+
+.nextButton {
+    padding: 1rem 2rem;
+    background: linear-gradient(45deg, #00ff87, #60efff);
+    border: none;
+    border-radius: 10px;
+    color: black;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.nextButton:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 255, 135, 0.3);
+}
+
+.scoreCard {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 2rem;
+    border-radius: 20px;
+    backdrop-filter: blur(10px);
+    text-align: center;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.finalScore {
+    font-size: 3rem;
+    font-weight: bold;
+    background: linear-gradient(45deg, #00ff87, #60efff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin: 1rem 0;
+}
+
+.nameButton {
+    background: linear-gradient(45deg, #00ff87, #60efff);
+    color: #000;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin: 20px 0;
+}
+
+.nameButton:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(0, 255, 135, 0.3);
+}
+
+.nameForm {
+    display: flex;
+    gap: 10px;
+    margin: 20px 0;
+    align-items: center;
+    justify-content: center;
+}
+
+.nameInput {
+    padding: 12px 20px;
+    border: 2px solid #00ff87;
+    border-radius: 8px;
+    font-size: 1rem;
+    background: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    width: 250px;
+    transition: all 0.3s ease;
+}
+
+.nameInput:focus {
+    outline: none;
+    border-color: #60efff;
+    box-shadow: 0 0 10px rgba(96, 239, 255, 0.3);
+}
+
+.submitButton {
+    background: linear-gradient(45deg, #60efff, #00ff87);
+    color: #000;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.submitButton:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(96, 239, 255, 0.3);
+}
+
+.nameInputContainer {
+    background: rgba(0, 0, 0, 0.8);
+    padding: 2rem;
+    border-radius: 20px;
+    border: 2px solid #00ff87;
+    max-width: 500px;
+    margin: 2rem auto;
+    text-align: center;
+    backdrop-filter: blur(10px);
+    animation: fadeIn 0.5s ease;
+}
+
+.nameInputTitle {
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+    background: linear-gradient(45deg, #00ff87, #60efff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.playerWelcome {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    margin: 1rem 0;
+    padding: 1rem;
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+    border: 1px solid #60efff;
+}
+
+.playerWelcome span {
+    font-size: 1.2rem;
+    color: #fff;
+}
+
+.changeNameButton {
+    background: transparent;
+    border: 1px solid #60efff;
+    color: #60efff;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.changeNameButton:hover {
+    background: rgba(96, 239, 255, 0.1);
+    transform: translateY(-2px);
+}
+
+.prizeAnnouncement {
+    background: rgba(0, 0, 0, 0.8);
+    padding: 2rem;
+    border-radius: 20px;
+    border: 2px solid #ffd700;
+    max-width: 800px;
+    margin: 2rem auto;
+    text-align: center;
+    backdrop-filter: blur(10px);
+    animation: fadeIn 0.5s ease;
+}
+
+.prizeTitle {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    background: linear-gradient(45deg, #ffd700, #ffa500);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: glow 2s ease-in-out infinite alternate;
+}
+
+@keyframes glow {
+    from {
+        text-shadow: 0 0 5px #ffd700, 0 0 10px #ffd700, 0 0 15px #ffd700;
+    }
+
+    to {
+        text-shadow: 0 0 10px #ffd700, 0 0 20px #ffd700, 0 0 30px #ffd700;
+    }
+}
+
+.prizeText {
+    color: #fff;
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+}
+
+.prizeButton {
+    background: linear-gradient(45deg, #ffd700, #ffa500);
+    color: #000;
+    border: none;
+    padding: 0.8rem 1.5rem;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin: 1rem 0;
+}
+
+.prizeButton:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(255, 215, 0, 0.3);
+}
+
+.prizeDetails {
+    background: rgba(0, 0, 0, 0.5);
+    padding: 1.5rem;
+    border-radius: 15px;
+    margin-top: 1.5rem;
+    text-align: left;
+    border: 1px solid rgba(255, 215, 0, 0.3);
+}
+
+.prizeDetails h3 {
+    color: #ffd700;
+    margin-bottom: 1rem;
+    font-size: 1.3rem;
+}
+
+.prizeDetails ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0 0 1.5rem 0;
+}
+
+.prizeDetails li {
+    color: #fff;
+    margin-bottom: 0.8rem;
+    padding-left: 1.5rem;
+    position: relative;
+}
+
+.prizeDetails li:before {
+    content: '🏆';
+    position: absolute;
+    left: 0;
+}
+
+.prizeNote {
+    color: #ffd700;
+    font-style: italic;
+    font-size: 0.9rem;
+    margin-top: 1rem;
+}
+
+.leaderboardControls {
+    display: none;
+}
+
+.resetButton {
+    display: none;
+}
+
+.prizeAmounts {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 2rem;
+    gap: 1rem;
+}
+
+.prizeTier {
+    background: rgba(0, 0, 0, 0.3);
+    padding: 1.5rem;
+    border-radius: 15px;
+    text-align: center;
+    border: 1px solid rgba(255, 215, 0, 0.3);
+    flex: 1;
+    transition: all 0.3s ease;
+}
+
+.prizeTier:hover {
+    transform: translateY(-5px);
+    border-color: #ffd700;
+    box-shadow: 0 5px 15px rgba(255, 215, 0, 0.2);
+}
+
+.prizeTier:first-child {
+    background: linear-gradient(45deg, rgba(255, 215, 0, 0.1), rgba(255, 165, 0, 0.1));
+}
+
+.prizeTier:nth-child(2) {
+    background: linear-gradient(45deg, rgba(192, 192, 192, 0.1), rgba(169, 169, 169, 0.1));
+}
+
+.prizeTier:nth-child(3) {
+    background: linear-gradient(45deg, rgba(205, 127, 50, 0.1), rgba(210, 180, 140, 0.1));
+}
+
+.rank {
+    display: block;
+    color: #ffd700;
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+}
+
+.amount {
+    display: block;
+    font-size: 1.8rem;
+    font-weight: bold;
+    background: linear-gradient(45deg, #ffd700, #ffa500);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.nameControls {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.changeNameButton {
+    background: linear-gradient(135deg, #4a90e2, #357abd);
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: all 0.3s ease;
+}
+
+.changeNameButton:disabled {
+    background: #cccccc;
+    cursor: not-allowed;
+}
+
+.changeNameButton:hover:not(:disabled) {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.resetNameButton {
+    background: linear-gradient(135deg, #e24a4a, #bd3535);
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: all 0.3s ease;
+}
+
+.resetNameButton:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}

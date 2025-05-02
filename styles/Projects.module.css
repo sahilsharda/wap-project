@@ -1,62 +1,199 @@
 .container {
-    padding: 2rem;
-    max-width: 1200px;
-    margin: 0 auto;
+    padding: 4rem 2rem;
+    width: 100%;
     min-height: 100vh;
-    background: linear-gradient(135deg, #000000 0%, #1a1a1a 100%);
+    background: #000000;
     color: white;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3rem;
+}
+
+.container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background:
+        radial-gradient(circle at 20% 20%, rgba(255, 0, 0, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 80% 80%, rgba(0, 255, 255, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 50% 50%, rgba(255, 255, 0, 0.1) 0%, transparent 50%);
+    animation: gradientMove 15s ease infinite;
+    z-index: 0;
+}
+
+@keyframes gradientMove {
+    0% {
+        transform: scale(1) rotate(0deg);
+    }
+
+    50% {
+        transform: scale(1.2) rotate(180deg);
+    }
+
+    100% {
+        transform: scale(1) rotate(360deg);
+    }
 }
 
 .title {
-    font-size: 3rem;
+    font-size: 4rem;
     text-align: center;
-    margin-bottom: 1rem;
-    background: linear-gradient(45deg, #ff6b6b, #ff8e8e);
+    margin: 2rem 0;
+    background: linear-gradient(45deg, #ff6b6b, #00ffff, #ffff00);
+    background-size: 200% 200%;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+    animation: gradientText 5s ease infinite, fadeInDown 1s ease;
+    position: relative;
+    z-index: 1;
+    letter-spacing: 2px;
+}
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .subtitle {
     text-align: center;
-    font-size: 1.2rem;
+    font-size: 1.4rem;
     color: #a0a0a0;
-    margin-bottom: 3rem;
+    margin: 2rem 0 4rem;
+    position: relative;
+    z-index: 1;
+    animation: fadeInUp 1s ease 0.3s both;
+    max-width: 800px;
+    line-height: 1.6;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes gradientText {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
 }
 
 .projectsGrid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 2rem;
-    padding: 1rem;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 3rem;
+    padding: 2rem;
+    position: relative;
+    z-index: 1;
+    max-width: 1400px;
+    width: 100%;
+    margin: 0 auto;
 }
 
 .projectCard {
-    background: rgba(255, 255, 255, 0.1);
-    border-radius: 15px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 20px;
     overflow: hidden;
     cursor: pointer;
     transition: all 0.3s ease;
     border: 1px solid rgba(255, 255, 255, 0.1);
+    position: relative;
+    backdrop-filter: blur(10px);
+    animation: fadeIn 0.5s ease both;
+    opacity: 0;
+    transform: translateY(20px);
+    padding: 1.5rem;
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.projectCard:nth-child(1) {
+    animation-delay: 0.2s;
+}
+
+.projectCard:nth-child(2) {
+    animation-delay: 0.4s;
+}
+
+.projectCard:nth-child(3) {
+    animation-delay: 0.6s;
+}
+
+.projectCard::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, #ff6b6b, #00ffff, #ffff00);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: -1;
 }
 
 .projectCard:hover {
-    transform: translateY(-5px);
-    background: rgba(255, 255, 255, 0.15);
-    border-color: rgba(255, 255, 255, 0.2);
+    transform: translateY(-5px) scale(1.02);
+    border-color: transparent;
+}
+
+.projectCard:hover::before {
+    opacity: 0.1;
 }
 
 .projectCard.selected {
-    background: rgba(255, 255, 255, 0.2);
+    background: rgba(255, 255, 255, 0.1);
     border-color: #ff6b6b;
 }
 
-.imagePlaceholder {
-    height: 200px;
-    background: rgba(255, 255, 255, 0.05);
+.imageContainer {
     position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+}
+
+.projectImage {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.projectCard:hover .projectImage {
+    transform: scale(1.1);
 }
 
 .techStack {
@@ -74,18 +211,82 @@
     padding: 5px 10px;
     border-radius: 15px;
     font-size: 0.8rem;
+    backdrop-filter: blur(5px);
+    transition: all 0.3s ease;
+}
+
+.techTag:hover {
+    background: rgba(255, 107, 107, 0.4);
+    transform: translateY(-2px);
 }
 
 .projectCard h2 {
-    font-size: 1.5rem;
-    margin: 1rem;
+    font-size: 1.8rem;
+    margin: 1.5rem 0;
     color: white;
+    transition: color 0.3s ease;
+    text-align: center;
+    letter-spacing: 1px;
+}
+
+.projectCard:hover h2 {
+    color: #ff6b6b;
 }
 
 .projectCard p {
     color: #a0a0a0;
-    margin: 1rem;
-    line-height: 1.6;
+    margin: 1.5rem 0;
+    line-height: 1.8;
+    text-align: center;
+    font-size: 1.1rem;
+}
+
+.projectLinks {
+    display: flex;
+    gap: 1.5rem;
+    margin: 2rem 0;
+    justify-content: center;
+}
+
+.projectLink {
+    background: linear-gradient(45deg, #ff6b6b, #00ffff);
+    color: white;
+    padding: 0.8rem 1.5rem;
+    border-radius: 25px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    font-size: 1.1rem;
+}
+
+.projectLink::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.5s ease;
+}
+
+.projectLink:hover::before {
+    left: 100%;
+}
+
+.githubLink {
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 25px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.githubLink:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: scale(1.05);
 }
 
 .detailPanel {
@@ -93,43 +294,93 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background: rgba(0, 0, 0, 0.9);
-    padding: 2rem;
-    border-radius: 15px;
+    background: rgba(0, 0, 0, 0.95);
+    padding: 3rem;
+    border-radius: 20px;
     border: 1px solid #ff6b6b;
-    max-width: 600px;
+    max-width: 800px;
     width: 90%;
     z-index: 1000;
+    backdrop-filter: blur(10px);
+    animation: panelAppear 0.3s ease;
+}
+
+@keyframes panelAppear {
+    from {
+        opacity: 0;
+        transform: translate(-50%, -40%);
+    }
+
+    to {
+        opacity: 1;
+        transform: translate(-50%, -50%);
+    }
 }
 
 .detailPanel h2 {
-    font-size: 2rem;
-    margin-bottom: 1rem;
+    font-size: 2.5rem;
+    margin: 2rem 0;
     color: #ff6b6b;
+    background: linear-gradient(45deg, #ff6b6b, #00ffff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: gradientText 5s ease infinite;
+    text-align: center;
+    letter-spacing: 1px;
 }
 
 .detailPanel p {
     color: #a0a0a0;
-    line-height: 1.6;
-    margin-bottom: 2rem;
+    line-height: 1.8;
+    margin: 2rem 0;
+    text-align: center;
+    font-size: 1.2rem;
 }
 
 .techList {
     display: flex;
     flex-wrap: wrap;
-    gap: 10px;
-    margin-bottom: 2rem;
+    gap: 1rem;
+    margin: 2rem 0;
+    justify-content: center;
+}
+
+.panelLinks {
+    display: flex;
+    gap: 1.5rem;
+    margin: 3rem 0;
+    justify-content: center;
 }
 
 .closeButton {
-    background: linear-gradient(45deg, #ff6b6b, #ff8e8e);
+    background: linear-gradient(45deg, #ff6b6b, #00ffff);
     color: white;
     border: none;
-    padding: 0.8rem 2rem;
+    padding: 1rem 2.5rem;
     border-radius: 25px;
     font-weight: bold;
     cursor: pointer;
-    transition: transform 0.3s ease;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    display: block;
+    margin: 2rem auto;
+    font-size: 1.1rem;
+}
+
+.closeButton::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.5s ease;
+}
+
+.closeButton:hover::before {
+    left: 100%;
 }
 
 .closeButton:hover {

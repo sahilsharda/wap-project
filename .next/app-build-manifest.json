@@ -23,6 +23,18 @@
       "static/chunks/main-app.js",
       "static/css/app/aura/page.css",
       "static/chunks/app/aura/page.js"
+    ],
+    "/dev-tools/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/css/app/dev-tools/page.css",
+      "static/chunks/app/dev-tools/page.js"
+    ],
+    "/projects/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/css/app/projects/page.css",
+      "static/chunks/app/projects/page.js"
     ]
   }
 }

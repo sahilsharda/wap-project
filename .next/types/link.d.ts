@@ -30,9 +30,10 @@ declare namespace __next_route_internal_types__ {
 
   type StaticRoutes = 
     | `/`
+    | `/aura`
+    | `/aura/quiz`
     | `/dev-tools`
     | `/projects`
-    | `/aura`
   type DynamicRoutes<T extends string = string> = never
 
   type RouteImpl<T> = 
