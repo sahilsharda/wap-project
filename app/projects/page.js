@@ -50,21 +50,16 @@ export default function Projects() {
                         className={`${styles.projectCard} ${selectedProject === project.id ? styles.selected : ''}`}
                         onClick={() => setSelectedProject(project.id)}
                     >
-                        <div className={styles.imageContainer}>
-                            <Image
-                                src={project.image}
-                                alt={project.title}
-                                width={400}
-                                height={300}
-                                className={styles.projectImage}
-                            />
-                            <div className={styles.techStack}>
-                                {project.tech.map((tech, index) => (
-                                    <span key={index} className={styles.techTag}>{tech}</span>
-                                ))}
-                            </div>
+                        <div className={styles.techStack}>
+                            {project.tech.map((tech, index) => (
+                                <span key={index} className={styles.techTag}>{tech}</span>
+                            ))}
                         </div>
-                        <h2>{project.title}</h2>
+                        <h2>{project.title}
+                            {project.id === 'newtonnator' && (
+                                <span className={styles.comingSoonBadge} style={{ marginLeft: '1rem', fontSize: '1rem' }}>Coming Soon</span>
+                            )}
+                        </h2>
                         <p>{project.description}</p>
                         <div className={styles.projectLinks}>
                             <Link href={project.link} className={styles.projectLink}>

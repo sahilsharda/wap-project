@@ -683,3 +683,43 @@
         align-items: center;
     }
 }
+
+.socialButton {
+    background: linear-gradient(45deg, #00ff87, #60efff, #ff0080);
+    color: #fff;
+    border: none;
+    padding: 0.9rem 2.2rem;
+    border-radius: 30px;
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin: 0 1rem;
+    cursor: pointer;
+    box-shadow: 0 4px 20px rgba(0, 255, 135, 0.15);
+    transition: all 0.3s cubic-bezier(.4, 2, .6, 1);
+    letter-spacing: 1px;
+    outline: none;
+    position: relative;
+    z-index: 1;
+}
+
+.socialButton:hover {
+    background: linear-gradient(45deg, #ff0080, #60efff, #00ff87);
+    color: #fff;
+    transform: translateY(-3px) scale(1.07);
+    box-shadow: 0 8px 32px rgba(255, 0, 128, 0.18);
+}
+
+.footerText {
+    display: block;
+    font-size: 1.3rem;
+    font-weight: 700;
+    background: linear-gradient(45deg, #00ff87, #60efff, #ff0080);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-fill-color: transparent;
+    animation: gradientText 5s ease infinite;
+    text-align: center;
+    margin: 1.5rem 0;
+    letter-spacing: 1px;
+}

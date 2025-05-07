@@ -231,14 +231,14 @@ const quizModes = [
         id: 1,
         title: 'Normal Quiz',
         description: 'Test your knowledge with 10 general programming questions. No time pressure, just pure learning!',
-        image: '/images/normal-quiz.jpg',
+        image: '/images/normal mode.png',
         tags: ['10 Questions', 'General', 'Learning', '2.5 Minutes']
     },
     {
         id: 2,
         title: 'Challenge Mode',
         description: 'Push your limits with three difficulty levels. Earn points, climb the leaderboard, and prove your expertise.',
-        image: '/images/challenge-quiz.jpg',
+        image: '/images/challange mode.png',
         tags: ['Competitive', 'Leaderboard', 'Points', 'Challenge']
     }
 ];
@@ -454,21 +454,6 @@ function AuraContent() {
 
                     <div className={styles.playerWelcome}>
                         <span>Welcome, {playerName}!</span>
-                        <div className={styles.nameControls}>
-                            <button
-                                className={styles.changeNameButton}
-                                onClick={handleNameChange}
-                                disabled={nameChangeCount >= 3}
-                            >
-                                Change Name ({3 - nameChangeCount} left)
-                            </button>
-                            <button
-                                className={styles.resetNameButton}
-                                onClick={handleResetName}
-                            >
-                                Reset Name
-                            </button>
-                        </div>
                     </div>
 
                     <div className={styles.leaderboardControls}>

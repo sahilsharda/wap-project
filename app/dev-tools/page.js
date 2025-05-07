@@ -8,51 +8,102 @@ import styles from '../../styles/DevTools.module.css';
 const tools = [
     {
         id: 1,
-        title: 'AI Code Assistant',
-        description: 'An intelligent coding assistant that helps you write, debug, and optimize code in multiple programming languages.',
-        image: '/images/code-assistant.jpg',
-        link: 'https://github.com/your-repo/code-assistant',
-        tags: ['AI', 'Coding', 'Debugging', 'Optimization']
+        title: 'Same.new',
+        description: 'Design, build, and deploy beautiful fullstack web apps on autopilot. Prompt a single URL to get started.',
+        image: '/images/same-new.png',
+        link: 'https://same.new/',
+        tags: ['Web Apps', 'Fullstack', 'Autopilot']
     },
     {
         id: 2,
-        title: 'Smart Documentation',
-        description: 'Automatically generate and maintain documentation for your projects with AI-powered analysis.',
-        image: '/images/documentation.jpg',
-        link: 'https://github.com/your-repo/smart-docs',
-        tags: ['Documentation', 'AI', 'Analysis']
+        title: 'Uiverse',
+        description: 'A community-driven platform for sharing and discovering beautiful UI elements and components.',
+        image: '/images/uiverse.png.webp',
+        link: 'https://uiverse.io/',
+        tags: ['UI', 'Components', 'Community']
     },
     {
         id: 3,
-        title: 'Code Review Bot',
-        description: 'Automated code review system that provides detailed feedback and suggestions for improvement.',
-        image: '/images/code-review.jpg',
-        link: 'https://github.com/your-repo/review-bot',
-        tags: ['Code Review', 'Automation', 'Quality']
+        title: 'RapidAPI',
+        description: "The world's largest public API marketplace. Discover, connect, and manage APIs with ease.",
+        link: 'https://rapidapi.com/',
+        tags: ['API', 'Marketplace', 'Integration']
     },
     {
         id: 4,
-        title: 'Performance Analyzer',
-        description: 'Analyze and optimize your application performance with detailed metrics and recommendations.',
-        image: '/images/performance.jpg',
-        link: 'https://github.com/your-repo/performance-analyzer',
-        tags: ['Performance', 'Optimization', 'Metrics']
+        title: 'Whimsical',
+        description: 'An all-in-one workspace for projects, boards, docs, and posts. Perfect for wireframes, flowcharts, and team collaboration.',
+        image: '/images/whimsical.png.png',
+        link: 'https://whimsical.com/',
+        tags: ['Wireframes', 'Docs', 'Collaboration']
     },
     {
         id: 5,
-        title: 'Security Scanner',
-        description: 'Automated security scanning tool that identifies vulnerabilities and suggests fixes.',
-        image: '/images/security.jpg',
-        link: 'https://github.com/your-repo/security-scanner',
-        tags: ['Security', 'Vulnerability', 'Automation']
+        title: 'Ni3',
+        description: 'AI-powered viral thumbnail maker. Instantly create captivating thumbnails for your content.',
+        image: '/images/ni3.png.webp',
+        link: 'https://www.ni3.app/',
+        tags: ['AI', 'Thumbnails', 'Content Creation']
     },
     {
         id: 6,
-        title: 'API Generator',
-        description: 'Generate RESTful APIs automatically from your database schema or models.',
-        image: '/images/api-generator.jpg',
-        link: 'https://github.com/your-repo/api-generator',
-        tags: ['API', 'Automation', 'REST']
+        title: 'DeepSite',
+        description: 'AI-powered deep learning tools and demos. Explore the latest in AI research and applications.',
+        link: 'https://enzostvs-deepsite.hf.space/',
+        tags: ['AI', 'Deep Learning', 'Demos']
+    },
+    {
+        id: 7,
+        title: 'AIGC21',
+        description: 'AIGC21 offers a suite of AI-generated content tools for creators and businesses.',
+        image: '/images/aigc21.png',
+        link: 'https://aigc21.com/',
+        tags: ['AI', 'Content Generation', 'Tools']
+    },
+    {
+        id: 8,
+        title: 'HotBot',
+        description: 'Access multiple AI models and expert bots in one place. Enjoy secure, private, and instant AI chats.',
+        link: 'https://www.hotbot.com/',
+        tags: ['AI', 'Chatbot', 'Productivity']
+    },
+    {
+        id: 9,
+        title: 'Vidu',
+        description: 'Create AI-powered videos from images. Login to start generating img2video content.',
+        link: 'https://www.vidu.com/login?redirect=%2Fcreate%2Fimg2video',
+        tags: ['AI', 'Video', 'Image to Video']
+    },
+    {
+        id: 10,
+        title: 'Vmake',
+        description: 'AI-powered creative tools for video and image editing, enhancement, and more.',
+        image: '/images/vmake.png',
+        link: 'https://vmake.ai/',
+        tags: ['AI', 'Video Editing', 'Image Editing']
+    },
+    {
+        id: 11,
+        title: 'ImgUpscaler',
+        description: 'Upscale and enhance your images using advanced AI technology. Improve image quality instantly.',
+        link: 'https://imgupscaler.com/',
+        tags: ['AI', 'Image Upscale', 'Enhancement']
+    },
+    {
+        id: 12,
+        title: 'Argil.ai',
+        description: 'Generate engaging AI videos, branded avatars, and transform articles into videos in minutes. Perfect for creators, educators, and marketers.',
+        image: '/images/argil-ai.png.svg',
+        link: 'https://www.argil.ai/',
+        tags: ['AI', 'Video', 'Avatar', 'Content Creation']
+    },
+    {
+        id: 13,
+        title: 'Readdy',
+        description: 'A powerful web tool for productivity and collaboration. Explore its features to enhance your workflow.',
+        image: '/images/readdy.avif',
+        link: 'https://readdy.ai/',
+        tags: ['Web Tool', 'Productivity', 'Collaboration']
     }
 ];
 
@@ -92,15 +143,18 @@ export default function DevTools() {
                         className={styles.toolCard}
                         onClick={() => setSelectedTool(tool)}
                     >
-                        <div className={styles.imageContainer}>
-                            <Image
-                                src={tool.image}
-                                alt={tool.title}
-                                fill
-                                className={styles.toolImage}
-                            />
-                        </div>
-                        <h2>{tool.title}</h2>
+                        <h2 style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                            {tool.image && (
+                                <Image
+                                    src={tool.image}
+                                    alt={tool.title + ' logo'}
+                                    width={32}
+                                    height={32}
+                                    className={styles.toolLogo}
+                                />
+                            )}
+                            {tool.title}
+                        </h2>
                         <p>{tool.description}</p>
                         <div className={styles.tags}>
                             {tool.tags.map((tag, index) => (

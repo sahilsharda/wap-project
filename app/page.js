@@ -45,15 +45,6 @@ export default function Home() {
 
       <div className={styles.content} ref={contentRef}>
         <div className={styles.heroSection}>
-          <div className={styles.heroImage}>
-            <Image
-              src="/images/hero-image.png"
-              alt="Newtonnator Hero"
-              width={500}
-              height={300}
-              className={styles.heroImg}
-            />
-          </div>
           <h1 className={styles.title}>
             <span className={styles.gradientText}>Welcome to Newtonnator</span>
             <span className={styles.subtitle}>Where Code Meets Creativity</span>
@@ -123,6 +114,7 @@ export default function Home() {
               </div>
             </div>
             <div className={styles.cardHover} />
+            <div className={styles.comingSoonBadge}>Coming Soon</div>
           </div>
         </div>
 
@@ -133,15 +125,6 @@ export default function Home() {
 
         <div className={styles.featuresGrid}>
           <Link href="/aura" className={styles.featureCard}>
-            <div className={styles.cardImage}>
-              <Image
-                src="/images/quiz-feature.png"
-                alt="Aura Quiz"
-                width={150}
-                height={150}
-                className={styles.featureImg}
-              />
-            </div>
             <div className={styles.cardContent}>
               <h2>Aura Quiz</h2>
               <p>Test your knowledge, climb the leaderboard, and win prizes!</p>
@@ -155,15 +138,6 @@ export default function Home() {
           </Link>
 
           <Link href="/projects" className={styles.featureCard}>
-            <div className={styles.cardImage}>
-              <Image
-                src="/images/projects-feature.png"
-                alt="Projects"
-                width={150}
-                height={150}
-                className={styles.featureImg}
-              />
-            </div>
             <div className={styles.cardContent}>
               <h2>Projects</h2>
               <p>Explore and contribute to exciting coding projects.</p>
@@ -177,15 +151,6 @@ export default function Home() {
           </Link>
 
           <Link href="/dev-tools" className={styles.featureCard}>
-            <div className={styles.cardImage}>
-              <Image
-                src="/images/dev-tools-feature.png"
-                alt="Dev Tools"
-                width={150}
-                height={150}
-                className={styles.featureImg}
-              />
-            </div>
             <div className={styles.cardContent}>
               <h2>Dev Tools</h2>
               <p>Powerful tools to enhance your development workflow.</p>
@@ -203,15 +168,6 @@ export default function Home() {
           <h2 className={styles.comingSoonTitle}>Coming Soon</h2>
           <div className={styles.comingSoonGrid}>
             <div className={styles.comingSoonCard}>
-              <div className={styles.cardImage}>
-                <Image
-                  src="/images/snapfile-feature.png"
-                  alt="SnapFile"
-                  width={150}
-                  height={150}
-                  className={styles.comingSoonImg}
-                />
-              </div>
               <div className={styles.cardContent}>
                 <h2>SnapFile</h2>
                 <p>Transform your images into code instantly! Upload any screenshot or design and get clean, production-ready code.</p>
@@ -267,33 +223,16 @@ export default function Home() {
 
         <div className={styles.footerSection}>
           <div className={styles.footerLinks}>
-            <Link href="/about" className={styles.footerLink}>About Us</Link>
-            <Link href="/contact" className={styles.footerLink}>Contact Us</Link>
-            <Link href="/privacy" className={styles.footerLink}>Privacy Policy</Link>
-            <Link href="/terms" className={styles.footerLink}>Terms of Service</Link>
+            <span className={styles.footerText}>To know more, follow me.</span>
           </div>
 
           <div className={styles.socialLinks}>
-            <a href="https://twitter.com/newtonnator" target="_blank" rel="noopener noreferrer" className={styles.socialLink}>
-              <Image src="/images/twitter.png" alt="Twitter" width={24} height={24} />
-              <span className={styles.socialText}>@newtonnator</span>
-            </a>
-            <a href="https://github.com/newtonnator" target="_blank" rel="noopener noreferrer" className={styles.socialLink}>
-              <Image src="/images/github.png" alt="GitHub" width={24} height={24} />
-              <span className={styles.socialText}>/newtonnator</span>
-            </a>
-            <a href="https://discord.gg/newtonnator" target="_blank" rel="noopener noreferrer" className={styles.socialLink}>
-              <Image src="/images/discord.png" alt="Discord" width={24} height={24} />
-              <span className={styles.socialText}>/newtonnator</span>
-            </a>
-            <a href="https://instagram.com/newtonnator" target="_blank" rel="noopener noreferrer" className={styles.socialLink}>
-              <Image src="/images/instagram.png" alt="Instagram" width={24} height={24} />
-              <span className={styles.socialText}>@newtonnator</span>
-            </a>
-            <a href="https://linkedin.com/company/newtonnator" target="_blank" rel="noopener noreferrer" className={styles.socialLink}>
-              <Image src="/images/linkedin.png" alt="LinkedIn" width={24} height={24} />
-              <span className={styles.socialText}>/newtonnator</span>
-            </a>
+            <button onClick={() => window.open('https://www.instagram.com/_.sahilll._11/', '_blank')} className={styles.socialButton}>
+              Insta
+            </button>
+            <button onClick={() => window.open('https://github.com/sahilsharda', '_blank')} className={styles.socialButton}>
+              GitHub
+            </button>
           </div>
 
           <div className={styles.reviewSection}>
